@@ -34,7 +34,8 @@
     "js": "npm run babel && npm run browserify && npm run cp",
     "build": "npm run gradle && npm run js",
     "clean": "./gradlew clean && rm -r lib",
-    "setDevVersion": "npm version --no-git-tag-version \"$(node -p \"require('./package.json').version\")-dev-$(date '+%Y%m%d')\""
+    "setDevVersion": "npm version --no-git-tag-version \"$(node -p \"require('./package.json').version\")-dev-$(date '+%Y%m%d')\"",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

@@ -30,9 +30,9 @@ tasks.withType(JavaCompile) {
 
 // GWT requires to be run with Java [8, 11]
 //  (http://www.gwtproject.org/release-notes.html#Release_Notes_2_9_0)
-if (![JavaVersion.VERSION_1_8, 
-      JavaVersion.VERSION_1_9, 
-      JavaVersion.VERSION_1_10, 
+if (![JavaVersion.VERSION_1_8,
+      JavaVersion.VERSION_1_9,
+      JavaVersion.VERSION_1_10,
       JavaVersion.VERSION_11,
      ].contains(JavaVersion.current())) {
     throw new GradleException("elkjs build requires to be run with Java [8, 11] (due to GWT compilation).")
@@ -61,13 +61,13 @@ def elkSources = [
   "${elkRepo}/plugins/org.eclipse.elk.graph.json/src",
   "${elkRepo}/plugins/org.eclipse.elk.alg.common/src",
   // The algorithms
-  "${elkRepo}/plugins/org.eclipse.elk.alg.disco/src",
-  "${elkRepo}/plugins/org.eclipse.elk.alg.force/src",
+//  "${elkRepo}/plugins/org.eclipse.elk.alg.disco/src",
+//  "${elkRepo}/plugins/org.eclipse.elk.alg.force/src",
   "${elkRepo}/plugins/org.eclipse.elk.alg.layered/src",
-  "${elkRepo}/plugins/org.eclipse.elk.alg.mrtree/src",
-  "${elkRepo}/plugins/org.eclipse.elk.alg.rectpacking/src",
-  "${elkRepo}/plugins/org.eclipse.elk.alg.radial/src",
-  "${elkRepo}/plugins/org.eclipse.elk.alg.spore/src"
+//  "${elkRepo}/plugins/org.eclipse.elk.alg.mrtree/src",
+//  "${elkRepo}/plugins/org.eclipse.elk.alg.rectpacking/src",
+//  "${elkRepo}/plugins/org.eclipse.elk.alg.radial/src",
+//  "${elkRepo}/plugins/org.eclipse.elk.alg.spore/src"
 ]
 
 // the directory to which all sources are copied for compilation

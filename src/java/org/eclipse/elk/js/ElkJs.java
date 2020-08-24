@@ -22,13 +22,13 @@ import org.eclipse.elk.graph.*;
 import org.eclipse.elk.graph.json.*;
 
 import org.eclipse.elk.alg.common.compaction.options.*;
-import org.eclipse.elk.alg.disco.options.*;
+//import org.eclipse.elk.alg.disco.options.*;
 import org.eclipse.elk.alg.layered.options.*;
-import org.eclipse.elk.alg.force.options.*;
-import org.eclipse.elk.alg.mrtree.options.*;
-import org.eclipse.elk.alg.radial.options.*;
-import org.eclipse.elk.alg.spore.options.*;
-import org.eclipse.elk.alg.rectpacking.options.*;
+//import org.eclipse.elk.alg.force.options.*;
+//import org.eclipse.elk.alg.mrtree.options.*;
+//import org.eclipse.elk.alg.radial.options.*;
+//import org.eclipse.elk.alg.spore.options.*;
+//import org.eclipse.elk.alg.rectpacking.options.*;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -126,7 +126,7 @@ public class ElkJs implements EntryPoint {
 
     public static void registerLayoutAlgorithms(final JavaScriptObject arrayObj) {
         // Note that since ELK changed the registration mechanism to service loaders (ELK #402),
-        // it is necessary to manually register the core options as well. 
+        // it is necessary to manually register the core options as well.
         SERVICE.registerLayoutMetaDataProviders(new CoreOptions());
 
         JSONArray arr = new JSONArray(arrayObj);
@@ -134,20 +134,20 @@ public class ElkJs implements EntryPoint {
             String alg = arr.get(i).isString().stringValue();
             if (alg.equals("layered")) {
                 SERVICE.registerLayoutMetaDataProviders(new LayeredMetaDataProvider());
-            } else if (alg.equals("force")) {
-                SERVICE.registerLayoutMetaDataProviders(new ForceMetaDataProvider());
-            } else if (alg.equals("stress")) {
-                SERVICE.registerLayoutMetaDataProviders(new StressMetaDataProvider());
-            } else if (alg.equals("mrtree")) {
-                SERVICE.registerLayoutMetaDataProviders(new MrTreeMetaDataProvider());
-            } else if (alg.equals("radial")) {
-                SERVICE.registerLayoutMetaDataProviders(new RadialMetaDataProvider());
-            } else if (alg.equals("disco")) {
-                SERVICE.registerLayoutMetaDataProviders(new PolyominoOptions(), new DisCoMetaDataProvider());
-            } else if (alg.equals("sporeOverlap") || alg.equals("sporeCompaction")) {
-                SERVICE.registerLayoutMetaDataProviders(new SporeMetaDataProvider());
-            } else if (alg.equals("rectpacking")) {
-                SERVICE.registerLayoutMetaDataProviders(new RectPackingMetaDataProvider());
+//            } else if (alg.equals("force")) {
+//                SERVICE.registerLayoutMetaDataProviders(new ForceMetaDataProvider());
+//            } else if (alg.equals("stress")) {
+//                SERVICE.registerLayoutMetaDataProviders(new StressMetaDataProvider());
+//            } else if (alg.equals("mrtree")) {
+//                SERVICE.registerLayoutMetaDataProviders(new MrTreeMetaDataProvider());
+//            } else if (alg.equals("radial")) {
+//                SERVICE.registerLayoutMetaDataProviders(new RadialMetaDataProvider());
+//            } else if (alg.equals("disco")) {
+//                SERVICE.registerLayoutMetaDataProviders(new PolyominoOptions(), new DisCoMetaDataProvider());
+//            } else if (alg.equals("sporeOverlap") || alg.equals("sporeCompaction")) {
+//                SERVICE.registerLayoutMetaDataProviders(new SporeMetaDataProvider());
+//            } else if (alg.equals("rectpacking")) {
+//                SERVICE.registerLayoutMetaDataProviders(new RectPackingMetaDataProvider());
             }
         }
     }
